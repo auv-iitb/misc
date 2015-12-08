@@ -8,7 +8,11 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt
 wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
 # Install
 
-bash ./install_deps.sh
+if [ -f ./install_deps.sh ]; then
+    curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_deps.sh | bash
+else
+    bash ./install_deps.sh
+fi
 
 # Initialize rosdep
 sudo rosdep init
