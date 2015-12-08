@@ -16,7 +16,11 @@ sudo apt-get -y install ros-indigo-desktop-full ros-indigo-uvc-camera ros-indigo
 #long install time
 
 printf "Installing necessary Gazebo related packages\n"
-bash ./install_gazebo.sh
+if [ -f ./install_gazebo.sh ]; then
+    curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_gazebo.sh | bash
+else
+    bash ./install_gazebo.sh
+fi
 
 printf "Installing flex and bison for parser\n"
 sudo apt-get -y install flex bison >/dev/null </dev/null
