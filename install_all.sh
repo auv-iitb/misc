@@ -1,6 +1,6 @@
 #! /bin/bash
 # run this setup with the following command
-# curl --silent <addr> | bash
+# curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_all.sh | bash
 
 # Setup sources list
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
