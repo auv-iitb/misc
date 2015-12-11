@@ -9,9 +9,9 @@ wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo 
 # Install
 
 if [ -f ./install_deps.sh ]; then
-    curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_deps.sh | bash
-else
     bash ./install_deps.sh
+else
+    curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_deps.sh | bash
 fi
 
 # Initialize rosdep
