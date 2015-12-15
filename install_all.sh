@@ -2,6 +2,8 @@
 # run this setup with the following command
 # curl --silent https://raw.githubusercontent.com/auv-iitb/misc/master/install_all.sh | bash
 
+x=$(pwd)
+
 # Setup sources list
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu trusty main" > /etc/apt/sources.list.d/ros-latest.list'
 # Setup keys
@@ -28,12 +30,16 @@ cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
 
-printf "Adding required files to ~/.bashrc\n"
-echo 'source '`rospack find auv_utils`'/src/utility/bash/robosub_aliases' >> ~/.bashrc
-echo 'source '`rospack find auv_utils`'/src/utility/bash/robosub_bash' >> ~/.bashrc
-
 printf "Getting the latest robosub repository"
 cd ~/catkin_ws/src
 git clone http://github.com/auv-iitb/robosub.git
-cd ~/catkin_ws/
-catkin_make
+if [ $? -eq 0 ]; then
+    cd ~/catkin_ws/
+    catkin_make
+
+    printf "Adding required files to ~/.bashrc\n"
+    echo 'source '`rospack find auv_utils`'/src/utility/bash/robosub_aliases' >> ~/.bashrc
+    echo 'source '`rospack find auv_utils`'/src/utility/bash/robosub_bash' >> ~/.bashrc
+fi
+
+cd $x
