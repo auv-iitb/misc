@@ -32,4 +32,4 @@ printf "Installing additional usefull programs\n"
 sudo apt-get -y install cutecom tree cloc vim git guake terminator tilda python-pip openssh-server >/dev/null </dev/null
 
 printf "Installing usefull python packages\n"
-sudo pip install -U numpy scipy matplotlib pyqtgraph autocomplete </dev/null
+sudo pip install -U numpy scipy matplotlib pyqtgraph autocomplete argcomplete </dev/null
