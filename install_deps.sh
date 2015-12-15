@@ -12,7 +12,7 @@ printf "Installing coriander\n"
 sudo apt-get -y install coriander >/dev/null </dev/null
 
 printf "Installing necessary ROS packages\n"
-sudo apt-get -y install ros-indigo-desktop-full ros-indigo-uvc-camera ros-indigo-camera1394 ros-indigo-camera-umd </dev/null
+sudo apt-get -y install ros-indigo-desktop-full ros-indigo-uvc-camera ros-indigo-camera1394 ros-indigo-camera-umd ros-indigo-bfl </dev/null
 #long install time
 
 printf "Installing necessary Gazebo related packages\n"
