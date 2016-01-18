@@ -29,7 +29,7 @@ printf "Installing google testing environment\n"
 sudo apt-get install libgtest-dev google-mock ros-indigo-rostest </dev/null
 
 printf "Installing additional usefull programs\n"
-sudo apt-get -y install cutecom tree cloc vim git guake terminator tilda python-pip openssh-server >/dev/null </dev/null
+sudo apt-get -y install cutecom tree cloc vim git guake terminator tilda python-pip openssh-server build-essential cmake python-dev>/dev/null </dev/null
 
 printf "Installing usefull python packages\n"
 sudo pip install -U numpy scipy matplotlib pyqtgraph autocomplete argcomplete </dev/null
